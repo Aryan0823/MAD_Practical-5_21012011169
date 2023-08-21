@@ -19,7 +19,35 @@ class MainActivity : AppCompatActivity() {
         val browserEditText : EditText = findViewById(R.id.editText1)
 
         browserBtn.setOnClickListener{
+            openUrl(browserEditText.text.toString())
+        }
 
+
+        val CallBtn : Button = findViewById(R.id.button2)
+        val CallEditText : EditText = findViewById(R.id.editText2)
+
+        CallBtn.setOnClickListener{
+            callNo(CallEditText.text.toString())
+        }
+        val CallLogBtn : Button = findViewById(R.id.button3)
+
+        CallLogBtn.setOnClickListener{
+            callLog()
+        }
+        val GalleryBtn : Button = findViewById(R.id.button4)
+
+        GalleryBtn.setOnClickListener{
+            openGallery()
+        }
+        val CameraBtn : Button = findViewById(R.id.button5)
+
+        CameraBtn.setOnClickListener{
+            openCamera()
+        }
+        val AlarmBtn : Button = findViewById(R.id.button6)
+
+        AlarmBtn.setOnClickListener{
+            openAlarm()
         }
     }
 
