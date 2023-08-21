@@ -7,12 +7,22 @@ import android.os.Bundle
 import android.provider.AlarmClock
 import android.provider.CallLog
 import android.provider.MediaStore
+import android.widget.Button
+import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val browserBtn : Button = findViewById(R.id.button1)
+        val browserEditText : EditText = findViewById(R.id.editText1)
+
+        browserBtn.setOnClickListener{
+
+        }
     }
+
     fun openUrl(url:String){
         Intent(Intent.ACTION_VIEW, Uri.parse(url)).also { startActivity(it) }
     }
@@ -20,15 +30,15 @@ class MainActivity : AppCompatActivity() {
         Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:$no")).also { startActivity(it) }
     }
     fun callLog(){
-        Intent(Intent.ACTION_VIEW).setType(CallLog.Calls.CONTENT_TYPE).also {  }
+        Intent(Intent.ACTION_VIEW).setType(CallLog.Calls.CONTENT_TYPE).also { startActivity(it) }
     }
     fun openGallery(){
-        Intent(Intent.ACTION_VIEW).setType("image/*").also {  }
+        Intent(Intent.ACTION_VIEW).setType("image/*").also { startActivity(it) }
     }
     fun openCamera(){
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also {  }
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { startActivity(it) }
     }
     fun openAlarm(){
-        Intent(AlarmClock.ACTION_SHOW_ALARMS).also {  }
+        Intent(AlarmClock.ACTION_SHOW_ALARMS).also { startActivity(it) }
     }
 }
